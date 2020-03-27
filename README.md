@@ -1,2 +1,2 @@
 # VladimirBushev.github.io
-[КАЛЬКУЛЯТОР](HTTPS://VladimirBushev.github.io/kalculator/)
+[КАЛЬКУЛЯТОР](HTTPS://VladimirBushev.github.io/kalculator/KALCULATOPR/HTML)
