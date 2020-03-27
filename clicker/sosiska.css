@@ -18,8 +18,9 @@
     display: block;
     margin-top: 5%;
     margin-left: 45%;
-    width: 6%;
+    width: fit-content;
     padding: 20px;
     text-decoration: none;
     color:  black;
+    
 }
