@@ -11,6 +11,8 @@
     border: red 5px solid;
     font-size: 36px;
     text-align: center;
+}
+.error {
     margin-bottom: 10%;
 }
 .button-exit {
