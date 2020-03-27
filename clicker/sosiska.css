@@ -27,3 +27,23 @@
 .exit {
     text-align: center;
 }
+.img {
+    margin-top: 5%;
+    text-align: center;
+}
+
+img {
+    width: 750px;
+    height: 500px;
+}
+.hidden-img {
+    display: none;
+}
+.display-img {
+    display: inline;
+}
+.title {
+    margin-top: 5%;
+    font-size: 100px;
+    text-align: center;
+}
