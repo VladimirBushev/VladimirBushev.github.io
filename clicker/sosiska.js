@@ -2,15 +2,16 @@ var img = document.getElementById('masha');
 var img2 = document.getElementById('katya');
 var title = document.getElementById('title');
 
+
 function clickedMasha(){
-    title.className = 'hidden-img';
+    title.innerHTML = 'жми на клик чтобы попробовать ещё раз';
     img2.className = 'hidden-img';
     //img.style.width = '300px';
     img.src = 'https://sun9-30.userapi.com/c857320/v857320058/f75e0/_bry66ZYpCM.jpg'
 }
 
 function clickedKatya(){
-    title.className = 'hidden-img';
+    title.innerHTML = 'жми на клик чтобы попробовать ещё раз';
     img.className = 'hidden-img';
     img2.src = 'https://sc02.alicdn.com/kf/HTB1ppZERpXXXXXpXFXXq6xXFXXXI/Plus-Size-women-high-heeled-shoes-footwear.jpg';
 }
@@ -22,6 +23,7 @@ function inputErrorId(id){
 
 function allInputError(){
     title.className = 'display-img';
+    title.innerHTML = 'ЖМИ НА ФОТО СВОЕЙ ДЕВОЧКИ';
     img.className = 'display-img';
     img2.className = 'display-img';
     img.src = 'https://sun9-30.userapi.com/c636930/v636930603/5a0aa/zEA6AiUGtgs.jpg';
