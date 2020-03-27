@@ -1,8 +1,25 @@
 .normaly {
-    border-color: green;
+    border: green 5px solid;
+    text-align: center;
+    font-size: 36px;
 }
 
-
+.div {
+    text-align: center;
+}
 .errorInput {
-    border-color: red;
+    border: red 5px solid;
+    font-size: 36px;
+    text-align: center;
+}
+.button-exit {
+    border: lightseagreen 5px solid;
+    text-align: center;
+    display: block;
+    margin-top: 5%;
+    margin-left: 45%;
+    width: 6%;
+    padding: 20px;
+    text-decoration: none;
+    color:  black;
 }
