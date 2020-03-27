@@ -1,5 +1,5 @@
 .kalculator228 {
-    width: 1000px;
+    width: 800px;
     height: 450px;
     margin: 0 auto;
     margin-top: 10%;
@@ -7,6 +7,7 @@
     background-color: white;
     border: lightseagreen 5px solid;
     padding: 20px;
+    margin-bottom: 10%;
 
 }
 .kalculator228 .battons-block button {
@@ -27,6 +28,7 @@
 .kalculator228 .inputs-block .input-block label {
     display: block;
     font-size: 36px;
+
 }
 
 .answer {
@@ -36,11 +38,12 @@
 .button-exit {
     border: lightseagreen 5px solid;
     text-align: center;
-    display: block;
-    margin-top: 5%;
-    margin-left: 45%;
-    width: 6%;
-    padding: 20px;
+    display: inline;
+    padding: 1%;
     text-decoration: none;
     color:  black;
+    font-size: 70%;
+}
+.exit {
+    text-align: center;
 }
