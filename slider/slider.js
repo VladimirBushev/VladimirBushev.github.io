@@ -1,34 +1,58 @@
-var gallery = ['https://avatars.mds.yandex.net/get-pdb/245485/7e207740-b9fb-4241-94bb-30b108e36130/s1200 ',
-    'https://avatars.mds.yandex.net/get-pdb/1539674/523600ba-3216-4475-aeef-03f30802f036/s1200?webp=false',
-    'https://avatars.mds.yandex.net/get-pdb/918543/727f58ae-4e71-4446-a1b1-19adce0eb6b7/s1200?webp=false',
-    'https://a.d-cd.net/2YAAAgKeqOA-1920.jpg',
-    'https://4.bp.blogspot.com/-PRPBBXysGyA/UcXMmaRRzGI/AAAAAAAAFi8/dC_wR-DxgWY/s1600/b0168_subaru_impreza_1_gen_wrx_sti_22.jpg']
+var sliderFactory = {
+    createNewSlider: function () {
+        var Newslider = {
+            gallery: [],
+            img: null, // document.getElementById('img'),
+            rb: null, //document.getElementById('right-button'),
+            lb: null, //document.getElementById('left-button'),
+            i: 0,
 
-var img = document.getElementById('img');
-var rb = document.getElementById('right-button');
-var lb = document.getElementById('left-button');
-var i = 0;
+            start: function (elId) {
+                var that = this;
 
-function right() {
-    if (i === (gallery.length - 1)) {
-        i = 0;
+                var el = document.querySelector('#' + elId);
+
+                this.rb = el.querySelector('.right');
+                this.lb = el.querySelector('.left');
+                this.img = el.querySelector('.img');
+
+                this.gallery.push('https://avatars.mds.yandex.net/get-pdb/245485/7e207740-b9fb-4241-94bb-30b108e36130/s1200 ');
+                this.gallery.push('https://widewp.ru/file/12167');
+                this.gallery.push('https://w.wallhaven.cc/full/p8/wallhaven-p8l3d9.jpg');
+                this.gallery.push('https://delessencedansmesveines.com/wp-content/uploads/2017/02/DLEDMV-Mitsu-Lancer-Evo-5-JDM-11.jpg');
+                this.gallery.push('https://cdn.motor1.com/images/mgl/kmgJR/s3/1998-subaru-impreza-22b-sti.jpg');
+
+                this.img.src = this.gallery[this.i];
+
+                this.rb.addEventListener('click', function (e) {
+                    that.right();
+                });
+
+                this.lb.addEventListener('click', function (e) {
+                    that.left();
+                });
+            },
+
+            right: function (e) {
+                if (this.i === (this.gallery.length - 1)) {
+                    this.i = 0;
+                }
+                else {
+                    this.i++;
+                }
+                this.img.src = this.gallery[this.i]
+            },
+
+            left: function (e) {
+                if (this.i === 0) {
+                    this.i = (this.gallery.length - 1);
+                }
+                else {
+                    this.i--;
+                }
+                this.img.src = this.gallery[this.i]
+            }
+        }
+        return Newslider;
     }
-    else {
-        i++;
-    }
-    img.src = gallery[i]
 }
-
-function left() {
-    if (i === 0 ) {
-        i = (gallery.length - 1 );
-    }
-    else {
-        i--;
-    }
-    img.src = gallery[i]
-}
-rb.addEventListener('click', right);
-lb.addEventListener('click', left);
-
-
