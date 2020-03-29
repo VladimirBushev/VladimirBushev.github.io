@@ -17,7 +17,7 @@ var sliderFactory = {
                 this.img = el.querySelector('.img');
 
                 this.gallery.push('https://avatars.mds.yandex.net/get-pdb/245485/7e207740-b9fb-4241-94bb-30b108e36130/s1200 ');
-                this.gallery.push('https://widewp.ru/file/12167');
+                this.gallery.push('https://i.ytimg.com/vi/7DzGwki9eyU/maxresdefault.jpg');
                 this.gallery.push('https://w.wallhaven.cc/full/p8/wallhaven-p8l3d9.jpg');
                 this.gallery.push('https://delessencedansmesveines.com/wp-content/uploads/2017/02/DLEDMV-Mitsu-Lancer-Evo-5-JDM-11.jpg');
                 this.gallery.push('https://cdn.motor1.com/images/mgl/kmgJR/s3/1998-subaru-impreza-22b-sti.jpg');
