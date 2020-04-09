@@ -6,6 +6,7 @@ startButton.addEventListener('click', start);
 document.addEventListener("keydown", keyDown);
 
 const bg = [[], []];
+let shetchik = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 let box = 40;
 let fc1 = 0, fc2 = 0, fc3 = 0, fc4 = 0, fc5 = 0, fc6 = 0, fc7 = 0, fc8 = 0;
 let s = 1;
@@ -603,8 +604,9 @@ function keyDown(e) {
     }
 }
 function clearLine() {
-    for (var i = 2; i < 22; i++) {
+    for (var i = 21; i > 0; i--) {
         for (var j = 0; j < 10; j++) {
+            shetchik[i] = k;
             if (bg[i][j].z === 3 && j === 0) {
                 if (bg[i][j + 1].z === 3) {
                     if (bg[i][j + 2].z === 3) {
@@ -626,7 +628,9 @@ function clearLine() {
                                                     bg[i][j + 8].z = 0;
                                                     bg[i][j + 9].z = 0;
                                                     k++;
+                                                    if (k===1){
                                                     m = i;
+                                                    }
                                                 }
                                             }
                                         }
@@ -644,7 +648,7 @@ function clearLine() {
             for (var j = 0; j < 10; j++) {
                 if (bg[i][j].z === 3 && i < m) {
                     bg[i][j].z = 0;
-                    bg[i + k][j].z = 3;
+                    bg[i + (shetchik[i]) ][j].z = 3;
 
                 }
 
