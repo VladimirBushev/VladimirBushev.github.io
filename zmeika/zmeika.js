@@ -197,7 +197,7 @@ function keyDown(e){
 
     if ((e.keyCode === 39) && (blockRight === false)) { //право
         x=x+40;
-        if (x<860){
+        if (x<=860){
             
             direction = 'right';
             blockLeft = true;
@@ -218,7 +218,7 @@ function keyDown(e){
     }
     else if ((e.keyCode === 38)  && (blockUp === false)) { //вверх
         y=y-40;
-        if (y>100) {
+        if (y>=100) {
         
         direction = 'up';
         blockLeft = false;
@@ -239,7 +239,7 @@ function keyDown(e){
     }
     else if ((e.keyCode === 37) && (blockLeft === false)) { //влево
         x=x-40;
-        if (x>100 ){
+        if (x>=100 ){
        
         direction = 'left';
         blockRight = true;
@@ -260,7 +260,7 @@ function keyDown(e){
     }
     else if ((e.keyCode === 40) && (blockDown === false)) { //вниз  }
         y=y+40;
-        if (y<860){
+        if (y<=860){
         
         direction = 'down';
         blockLeft = false;
