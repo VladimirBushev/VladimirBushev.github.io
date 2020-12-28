@@ -34,7 +34,7 @@ function allInputError(){
     inputErrorId('sardelka');
 }
 
-var sendButton = document.getElementById('button');
+var sendButton = document.querySelector('button');
 sendButton.addEventListener('click', allInputError);
 
 //img.addEventListener('click', clickedMasha);
