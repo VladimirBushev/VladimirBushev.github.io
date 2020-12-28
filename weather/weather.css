@@ -236,7 +236,7 @@ body {
     .forecast1, .forecast2, .today{
         width: 96%;
     }
-    .today .left-today p, .today .left-today .time {
+    .today .left-today p {
         font-size: 18x;
     }
 }   
@@ -244,8 +244,5 @@ body {
 @media (max-width: 400px){
     .zmeika, .tetris{
         font-size: 44px;
-    }
-    .today .left-today p, .today .left-today .time {
-        font-size: 18px;
     }
 }
