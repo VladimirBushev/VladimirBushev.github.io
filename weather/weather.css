@@ -205,22 +205,41 @@ body {
 @media (max-width:767px){
     .button {
         font-size: 15px;
+        padding: 10px 2px;
     }
     .today .right-today .temp-today {
         font-size: 70px;
     }
-
+    .forecast1, .forecast2, .today{
+        width: 97%;
+    }
 }
 
 
 @media (max-width:610px){
-    .button {
-        font-size: 10px;
-    }
     .today .right-today .temp-today {
         font-size: 50px;
     }
     .today .left-today p, .today .left-today .time {
         font-size: 25px;
+    }
+}
+
+@media (max-width: 500px){
+    .city-changer {
+        display: inline;
+    }
+    .city-changer div {
+        margin: 10px 10px;
+        width: 96%;
+    }
+    .forecast1, .forecast2, .today{
+        width: 96%;
+    }
+}   
+
+@media (max-width: 400px){
+    .zmeika, .tetris{
+        font-size: 44px;
     }
 }
