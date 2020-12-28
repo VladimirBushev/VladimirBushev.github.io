@@ -245,4 +245,7 @@ body {
     .zmeika, .tetris{
         font-size: 44px;
     }
+    .today .left-today p, .today .left-today .time {
+        font-size: 18px;
+    }
 }
