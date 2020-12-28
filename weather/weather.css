@@ -1,6 +1,11 @@
-.container {
+body {
     font-family: Arial, Helvetica, sans-serif;
-    min-width: 1600px;
+}
+
+.container {
+    max-width: 1800px;
+    padding: 0px 15px;
+    margin: 0px auto;
 }
 
 .button:hover {
@@ -10,14 +15,16 @@
 
 .button {
     font-size: 40px;
-    margin-right: 20px;
-    color:white;
+    margin: 0 10px;
+    color: white;
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 5px 10px rgb(53, 53, 53);
     background-color: lightseagreen;
     cursor: pointer;
 }
+
+
 
 .forecast, .today, .forecast1, .forecast2, .city-changer, .games {
     display: flex;
@@ -78,9 +85,10 @@
 
 .city-changer {
     display: flex;
+    margin: 20px auto;
 }
 
-.city-changer p {
+.city-changer div {
     width: 25%;
     text-align: center;
 }
@@ -120,4 +128,99 @@
     background-color: white;
     color: lightseagreen;
     cursor: pointer;
+}
+
+@media (max-width:1600px){
+    .left-today p{
+        font-size: 25px;
+    }
+    .temp-today{
+        font-size: 50px;
+    }
+}
+@media (max-width:1470px){
+    .left-today p{
+        font-size: 20px;
+    }
+}
+@media (max-width:1222px){
+
+
+    .button {
+        font-size: 30px;
+    }
+    .today .left-today .time {
+        font-size: 30px;
+    }
+
+    .today .left-today p {
+        font-size: 15px;
+    }
+    .today .right-today .temp-today {
+        font-size: 35px;
+    }
+
+}
+@media (max-width:992px){
+    .container {
+        padding: 0 0;
+    }
+
+    .button {
+        font-size: 20px;
+    }
+
+    .forecast {
+        display: inline;
+    }
+
+    .today .right-today .temp-today {
+        font-size: 90px;
+    }
+    
+    .today .left-today p, .today .left-today .time {
+        font-size: 50px;
+    }
+    
+    .forecast1, .forecast2, .today{
+        width: 98%;
+        margin: 20px 10px;
+    }
+    .forecast1, .forecast2 p {
+        font-size: 30px;
+    }
+}
+
+
+@media (max-width:830px){
+    .today .left-today p, .today .left-today .time {
+        font-size: 35px;
+    }
+    .zmeika, .tetris{
+        font-size: 50px;
+        margin: 10px 10px;
+    }
+}
+
+@media (max-width:767px){
+    .button {
+        font-size: 15px;
+    }
+    .today .right-today .temp-today {
+        font-size: 70px;
+    }
+
+}
+
+
+@media (max-width:610px){
+    .button {
+        font-size: 10px;
+    }
+    .today .right-today .temp-today {
+        font-size: 50px;
+    }
+    .today .left-today p, .today .left-today .time {
+        font-size: 25px;
+    }
 }
