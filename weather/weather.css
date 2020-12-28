@@ -236,6 +236,9 @@ body {
     .forecast1, .forecast2, .today{
         width: 96%;
     }
+    .today .left-today p, .today .left-today .time {
+        font-size: 20px;
+    }
 }   
 
 @media (max-width: 400px){
