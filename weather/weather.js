@@ -52,6 +52,19 @@ function tgn() {
     changeCity2();
 }
 
+function tet(){
+    document.location.href = 'tetris/index.html';
+}
+
+function snk(){
+    document.location.href = 'zmeika/index.html';
+}
+
+let tetris = document.querySelector('.tetris');
+tetris.addEventListener('click', tet) ;
+
+let zmeika = document.querySelector('.zmeika');
+zmeika.addEventListener('click', snk) ;
 
 
 var element = document.querySelector('.saint-petersburg');
@@ -71,9 +84,9 @@ function changeCity2() {
     .then(function(data){
         document.querySelector('.humidity').textContent = data.main.humidity;
         document.querySelector('.pressure').textContent = Math.round((data.main.pressure)/1.33);
-        document.querySelector('.temp').innerHTML = (Math.round((data.main.temp - 273.15)*10))/10 + ' &deg;';
+        document.querySelector('.temp-today').innerHTML = (Math.round((data.main.temp - 273.15)*10))/10 + ' &deg;';
         document.querySelector('.feels-like').innerHTML = (Math.round((data.main.feels_like - 273.15)*10))/10 + ' &deg;';
-        document.querySelector('.image').innerHTML = `<img class='image1' src='https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png'>`;
+        document.querySelector('.image-today').innerHTML = `<img class='image1' src='https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png'>`;
     })
     .catch(function(){
 
@@ -175,9 +188,9 @@ function changeCity(i) {
             // document.querySelector('.city-name').textContent = data.name;
             document.querySelector('.humidity').textContent = data.main.humidity;
             document.querySelector('.pressure').textContent = Math.round((data.main.pressure)/1.33);
-            document.querySelector('.temp').innerHTML = (Math.round((data.main.temp - 273.15)*10))/10 + ' &deg;';
+            document.querySelector('.temp-today').innerHTML = (Math.round((data.main.temp - 273.15)*10))/10 + ' &deg;';
             document.querySelector('.feels-like').innerHTML = (Math.round((data.main.feels_like - 273.15)*10))/10 + ' &deg;';
-            document.querySelector('.image').innerHTML = `<img class='image1' src='https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png'>`;
+            document.querySelector('.image-today').innerHTML = `<img class='image1' src='https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png'>`;
 
         })
         .catch(function () {
@@ -273,3 +286,4 @@ function changeCity(i) {
 }
 
 changeCity(cityId);
+

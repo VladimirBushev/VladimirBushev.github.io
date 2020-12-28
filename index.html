@@ -4,111 +4,92 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=1600', initial-scale=1.0'>
     <title>Владимир</title>
-    <link rel='stylesheet' href='tusovka.css'>
+    
     <link rel='stylesheet' href='weather/weather.css'>
     <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
 
     
 </head>
 <body>
-    <div class='content'>
-        <div class='city-changer'>
-            <p class='city-name saint-petersburg changed-city'> Saint-Petersburg</p>
-            <p class='city-name syktyvkar'> Syktyvkar</p>
-            <p class='city-name saransk'> Saransk</p>
-            <p class="city-name taganskaya"> Taganskaya</p>
-            <p class='city-name moscow'> Moscow</p>
-        </div>
-        <div class='weather'>
-            <div class='all-today'>
-                <div class='weather-today'>
-                    <p>  <b class='time'> </b></p>
-                    <p> Давление <b class='pressure'> </b> мм </p>
-                    <p> Влажность <b class='humidity'> </b> %</p>
-
-                    <p> Ощущаеться как <b class='feels-like'> </b> </p>
-                
-                </div>
-                <div class='image-today'>
-                    <b class='temp'> </b> 
-                    <b class='image'> </b>
-                </div>
-            </div>
-            <div class='weather3'>
-                <p class='data3'></p>
-                <p class='temp3' ></p>
-                <p class='image3'> </p>
-            </div>
-            <div class='weather6'>
-                <p class='data6'></p>
-                <p class='temp6'></p>
-                <p class='image6'></p>
-            </div>
-            <div class='weather9'>
-                <p class='data9'></p>
-                <p class='temp9'></p>
-                <p class='image9'></p>
-            </div>
-            <div class='weather12'>
-                <p class='data12'></p>
-                <p class='temp12'></p>
-                <p class='image12'></p>
-            </div>
-            <div class='weather15'>
-                <p class='data15'></p>
-                <p class='temp15'></p>
-                <p class='image15'></p>
-            </div>
-            <div class='weather18'>
-                <p class='data18'></p>
-                <p class='temp18'></p>
-                <p class='image18'></p>
-            </div>
-            <div class='weather21'>
-                <p class='data21'></p>
-                <p class='temp21'></p>
-                <p class='image21'></p>
-            </div>
-            <div class='weather24'>
-                <p class='data24'></p>
-                <p class='temp24'></p>
-                <p class='image24'></p>
-            </div>
-        </div>
-        <div class='section-category'>
-            <h2>CATEGORY</h2>
-            <ul>
-                <li>
-                    <a href='kalculator/index.html'>Kalculator</a>
-                </li>
-                <li>
-                    <a href='slider/index.html'>Slider</a>
-                </li>
-                <li>
-                    <a href='clicker/index.html'>Cliker</a>
-                </li>
-                <li>
-                    <a href='tetris/index.html'>Tetris</a>
-                </li>
-            </ul>
     
+    <div class='container'>
+        <div class="weather">
+            <div class='city-changer'>
+                <p class='button saint-petersburg changed-city'> Saint-Petersburg</p>
+                <p class='button syktyvkar'> Syktyvkar</p>
+                <p class='button saransk'> Saransk</p>
+                <p class="button taganskaya"> Taganskaya</p>
+                <p class='button moscow'> Moscow</p>
+            </div>
+            <div class='forecast'>
+                <div class='today'>
+                    <div class='left-today'>
+                        <p>  <b class='time'> </b></p>
+                        <p> Давление <b class='pressure'> </b> мм </p>
+                        <p> Влажность <b class='humidity'> </b> %</p>
+                        <p> Ощущаеться как <b class='feels-like'> </b> </p>
+                    </div>
+                    <div class='right-today'>
+                        <b class='temp-today'> </b> 
+                        <b class='image-today'> </b>
+                    </div>
+                </div>
+                <div class="forecast1">
+                    <div class='weather3'>
+                        <p class='data3'></p>
+                        <p class='temp3' ></p>
+                        <p class='image3'> </p>
+                    </div>
+                    <div class='weather6'>
+                        <p class='data6'></p>
+                        <p class='temp6'></p>
+                        <p class='image6'></p>
+                    </div>
+                    <div class='weather9'>
+                        <p class='data9'></p>
+                        <p class='temp9'></p>
+                        <p class='image9'></p>
+                    </div>
+                    <div class='weather12'>
+                        <p class='data12'></p>
+                        <p class='temp12'></p>
+                        <p class='image12'></p>
+                    </div>
+                </div>
+                <div class="forecast2">
+                    <div class='weather15'>
+                        <p class='data15'></p>
+                        <p class='temp15'></p>
+                        <p class='image15'></p>
+                    </div>
+                    <div class='weather18'>
+                        <p class='data18'></p>
+                        <p class='temp18'></p>
+                        <p class='image18'></p>
+                    </div>
+                    <div class='weather21'>
+                        <p class='data21'></p>
+                        <p class='temp21'></p>
+                        <p class='image21'></p>
+                    </div>
+                    <div class='weather24'>
+                        <p class='data24'></p>
+                        <p class='temp24'></p>
+                        <p class='image24'></p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class='section-hot'>
-            <h2>HOT</h2>
-            <ul>
-                <li>
-                    <a href='zmeika/index.html'>Zmeika</a>
-                </li>
-                <li>
-                    <a href=''>Week</a>
-                </li>
-                <li>
-                    <a href=''>Month</a>
-                </li>
-                <li>
-                    <a href=''>All time</a>
-                </li>
-            </ul>
+            <div class="games">
+                <div class="tetris">
+                    TETRIS
+                    <!-- <a href='tetris/index.html'>Tetris</a> -->
+                </div>
+                <div class="zmeika">
+                    SNAKE
+                    <!-- <a href='zmeika/index.html'>Snake</a> -->
+                </div>
+            </div>
         </div>
     </div>
     <script src='weather/weather.js'></script>  

@@ -1,24 +1,14 @@
-body {
+.container {
     font-family: Arial, Helvetica, sans-serif;
     min-width: 1600px;
 }
-.weather, .all-today {
-    display: flex;
-}
 
-.weather {
-    background-color: lightseagreen;
-    color: white;
-    box-shadow: 0 10px 15px rgb(53, 53, 53);
-    border-radius: 10px;
-}
-
-.city-name:hover {
+.button:hover {
     background-color: white;
     color: lightseagreen;
 }
 
-.city-name {
+.button {
     font-size: 40px;
     margin-right: 20px;
     color:white;
@@ -26,60 +16,108 @@ body {
     padding: 15px;
     box-shadow: 0 5px 10px rgb(53, 53, 53);
     background-color: lightseagreen;
+    cursor: pointer;
 }
 
-
-
-.image1 {
-    width: 200px;
-    height: 180px;
+.forecast, .today, .forecast1, .forecast2, .city-changer, .games {
+    display: flex;
 }
 
-p {
- font-size: 25px;
+.forecast1, .forecast2, .today {
+    background-color: lightseagreen;
+    color: white;
+    box-shadow: 0 10px 15px rgb(53, 53, 53);
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 33.333%;
 }
 
-.weather-today {
-    height: 300px;
-    width: 300px;
+.left-today {
+    width: 60%;
     margin-left: 20px;
 }
 
+.right-today {
+    text-align: center;
+    width: 40%;
+}
 
 .weather3, .weather6, .weather9, .weather12, .weather15, .weather18, .weather21, .weather24   {
-    height: 300px;
-    width: 160px;
     text-align: center;
+    width: 25%;
+    height: 100%;
+    font-size: 30px;
+
 }
 
-.image-today{
-    text-align: center;
-    height: 280px;
-    width: 250px;
-    margin-bottom: 0px;
-    margin-top: 20px;
-}
 
 .changed-city {
     background-color: white;
     color: lightseagreen;
+    cursor: default;
 }
 
-.temp {
+.temp-today, .image-today {
     font-size: 75px;
-    margin-top: 50px;
-    
+    display: block;
 }
 
-.image {
-    height: 180px;
-    width: 180 px;
+.temp-today {
+    height: 30%;
+    padding-top: 20px;
+}
+
+.image-today {
+    height: 70%;
 }
 
 .time {
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .city-changer {
     display: flex;
+}
+
+.city-changer p {
+    width: 25%;
+    text-align: center;
+}
+
+.left-today p {
+    font-size: 30px;
+}
+
+.image1 {
+     width: 100%;
+}
+
+.forecast1 p, .forecast2 p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 20%;
+    padding-top: 20%;
+}
+
+.games {
+    margin-top: 1% ;
+}
+
+.zmeika, .tetris {
+    width: 50%;
+    font-size: 100px;
+    text-align: center;
+    color: white;
+    background-color:lightseagreen ;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgb(53, 53, 53);
+}
+
+.zmeika:hover, .tetris:hover {
+    background-color: white;
+    color: lightseagreen;
+    cursor: pointer;
 }
