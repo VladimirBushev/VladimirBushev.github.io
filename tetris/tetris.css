@@ -1,7 +1,7 @@
 .div {
     font-size: 50px;
     color: lightseagreen;
-    margin: 10px;
+    margin-top: 10px;
     float: left;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 100%;
@@ -26,6 +26,7 @@ button {
     font-size: 40px;
     color: lightseagreen;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1px 0px;
 }
 label {
     color:white;
@@ -61,7 +62,7 @@ label {
 }
 
 .tetris-menu button, .tetris-menu a {
-    width: 40%;
+    width: 35%;
     text-align: center;
     margin: 0px 5px;
     border-radius: 10px;
@@ -87,11 +88,11 @@ label {
 }
 
 .tetris-menu  select{
-    width: 10%;
+    width: 15%;
     font-size: 40px;
     border-radius: 10px;
     border-width: 0px;
-    margin: 10px 10px;
+    margin: 5px 5px;
 }
 
 
