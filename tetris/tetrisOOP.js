@@ -789,13 +789,13 @@ function swipeDown(){
 function end(event) {
     endX = event.changedTouches[0].clientX;
     endY = event.changedTouches[0].clientY;
-    if ((endX > (touchX + 100)) & (endY < (touchY + 100)) & (endY > (touchY - 100))){
+    if ((endX > (touchX + 50)) & (endY < (touchY + 50)) & (endY > (touchY - 50))){
         swipeRight();
     }
-    else if ((endX < (touchX - 100)) & (endY < (touchY + 100)) & (endY > (touchY - 100))){
+    else if ((endX < (touchX - 50)) & (endY < (touchY + 50)) & (endY > (touchY - 50))){
         swipeLeft();
     }
-    else if((endY < (touchY - 100)) & (endX < (touchX + 100)) & (endX > (touchX - 100))){
+    else if((endY < (touchY - 50)) & (endX < (touchX + 50)) & (endX > (touchX - 50))){
         swipeUp();
     }
     else if ((endX === touchX) & (endY === touchY)){
