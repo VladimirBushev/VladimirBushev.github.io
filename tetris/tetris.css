@@ -1,10 +1,7 @@
 .div {
     font-size: 36px;
     color: blue;
-    width: 250px;
-    height: 250px;
     margin: 10px;
-    margin-top: 150px;
     margin-left: 25%;
     float: left;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -23,8 +20,6 @@ canvas {
 button {
     margin: 10px;
     margin-top: 50px;
-    width: 200px;
-    height: 100px;
     font-size: 36px;
     color: blue;
     border: blue 5px solid;
@@ -41,9 +36,22 @@ label {
     display: block;
     text-decoration: none;
     font-size: 70%;
-    width: 200px;
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-top: 500px;
 }
 
+.tetris-menu {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.body {
+    max-width: 600px;
+    display: flex;
+}
+
+.canvas {
+    width: 100%;
+    height: 80%;
+ 
+}

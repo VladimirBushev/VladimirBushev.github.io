@@ -66,10 +66,10 @@ function setScore() {
     ctx.fillStyle = 'white';
     ctx.fillRect(400, 70, 500, 200);
     ctx.fillStyle = 'blue';
-    ctx.font = '36px Verdana';
-    ctx.fillText('SCORE: ' + score, 560, 130);
-    ctx.fillText('HIGH SCORE', 420, 200);
-    ctx.fillText('THIS SESSION: ' + highScore, 420, 240);
+    ctx.font = '20px Verdana';
+    ctx.fillText('SCORE: ' + score, 10, 20);
+    ctx.fillText('HIGH SCORE', 10, 40);
+    ctx.fillText('THIS SESSION: ' + highScore, 10, 60);
     ctx.fillText('NEXT FIGURE', 420, 300);
 }
 function drawNextFigure() {
@@ -214,6 +214,7 @@ function drawGame() {
 
             ctx.fillStyle = 'white';
             ctx.fillRect(0, 0, 403, 80);
+            setScore();
         }
     }
 
@@ -733,8 +734,8 @@ let touchY = 0;
 let endX = 0;
 let endY = 0;
 
-document.querySelector('body').addEventListener('touchstart',startSwipe);
-document.querySelector('body').addEventListener('touchend',end);
+document.querySelector('html').addEventListener('touchstart',startSwipe);
+document.querySelector('html').addEventListener('touchend',end);
 
 function swipeRight(){
     keyDown('right');
