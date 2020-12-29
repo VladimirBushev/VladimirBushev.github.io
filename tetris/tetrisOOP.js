@@ -82,8 +82,8 @@ function setScore() {
     ctx.fillText('MOBILE:', 420, 660 );
     ctx.fillText('Swipe left, right and' , 420, 700 );
     ctx.fillText('up to control', 420, 720 );
-    ctx.fillText('Tap the screen to', 420, 780 );
-    ctx.fillText('place the tetromino', 420, 800 );
+    ctx.fillText('Tap the screen to', 420, 750 );
+    ctx.fillText('place the tetromino', 420, 770 );
 }
 function drawNextFigure() {
     ctx.fillStyle = 'white';

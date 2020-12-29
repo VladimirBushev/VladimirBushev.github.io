@@ -73,6 +73,7 @@ label {
 .tetris-menu button:hover, .tetris-menu a:hover {
     color: lightseagreen;
     background-color: white;
+    
 
 }
 
@@ -92,3 +93,14 @@ label {
     border-width: 0px;
     margin: 10px 10px;
 }
+
+
+@media (min-width:710px){
+    .canvas {
+        width: 65%;
+    }
+    .div {
+        width: 65%;
+    }
+}
+
