@@ -790,6 +790,8 @@ function end(event) {
 }
 
 function startSwipe(event) {
+
     touchX = event.changedTouches[0].clientX;
     touchY = event.changedTouches[0].clientY;
+    
 }
