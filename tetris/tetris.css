@@ -89,7 +89,7 @@ label {
 .tetris-menu  select{
     width: 10%;
     font-size: 40px;
-    border-radius: 20px;
+    border-radius: 10px;
     border-width: 0px;
     margin: 10px 10px;
 }
@@ -101,6 +101,15 @@ label {
     }
     .div {
         width: 65%;
+    }
+}
+
+@media (max-width:710px) { 
+    .div label, .div select, .div button, .div a{
+        font-size: 20px;
+    }
+    .div {
+        margin-left: 0px;
     }
 }
 
