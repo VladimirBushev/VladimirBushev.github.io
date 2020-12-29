@@ -784,7 +784,7 @@ function end(event) {
     else if((endY < (touchY - 100)) & (endX < (touchX + 100)) & (endX > (touchX - 100))){
         swipeUp();
     }
-    else if((endY > (touchY + 100)) & (endX < (touchX + 100)) & (endX > (touchX - 100))){
+    else if ((endX === touchX) & (endY === touchY)){
         swipeDown();
     }
 }
