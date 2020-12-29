@@ -3,7 +3,7 @@ const ctx = cvs.getContext('2d')
 var speedId = document.getElementById('label');
 var startButton = document.getElementById('start-button');
 startButton.addEventListener('click', start);
-document.addEventListener("keydown", keyDown);
+document.addEventListener('keydown', keyDown);
 
 const bg = [[], []];
 let shetchik = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -317,7 +317,7 @@ function startGame() {
 function keyDown(e) {
     findFigure(1);
     if (keyDownBlocker === false) {
-        if (e.keyCode === 39) {
+        if ((e.keyCode === 39)||(e === 'right')) {
 
             if ((fc2 < 9 && fc4 < 9 && fc6 < 9 && fc8 < 9) &&
                 (bg[fc1][fc2 + 1].z != 3 &&
@@ -334,7 +334,7 @@ function keyDown(e) {
                 bg[fc7][fc8 + 1].z = 1;
             }
         }
-        else if (e.keyCode === 37) {
+        else if ((e.keyCode === 37)||(e === 'left')) {
             if ((fc2 > 0 && fc4 > 0 && fc6 > 0 && fc8 > 0) &&
                 (bg[fc1][fc2 - 1].z != 3 &&
                     bg[fc3][fc4 - 1].z != 3 &&
@@ -350,7 +350,7 @@ function keyDown(e) {
                 bg[fc7][fc8 - 1].z = 1;
             }
         }
-        else if (e.keyCode === 40) {
+        else if ((e.keyCode === 40)||(e === 'down')) {
             if ((fc1 < 21 && fc3 < 21 && fc5 < 21 && fc7 < 21) &&
                 (bg[fc1 + 1][fc2].z != 3 &&
                     bg[fc3 + 1][fc4].z != 3 &&
@@ -366,7 +366,7 @@ function keyDown(e) {
                 bg[fc7 + 1][fc8].z = 1;
             }
         }
-        else if (e.keyCode === 38) {
+        else if ((e.keyCode === 38) || (e ==='up')){
             if ((figureId === 2) &&
                 (bg[fc1 - 2][fc2 + 2].z != 2) &&
                 (bg[fc3 - 1][fc4 + 1].z != 2) &&
@@ -728,3 +728,68 @@ setScore();
 createArray();
 let game = setInterval(drawGame, 1);
 
+let touchX = 0;
+let touchY = 0;
+let endX = 0;
+let endY = 0;
+
+document.querySelector('body').addEventListener('touchstart',startSwipe);
+document.querySelector('body').addEventListener('touchend',end);
+
+function swipeRight(){
+    keyDown('right');
+}
+
+function swipeLeft(){
+    keyDown('left');
+}
+
+function swipeUp(){
+    keyDown('up');
+}
+
+function swipeDown(){
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+    keyDown('down');
+}
+
+function end(event) {
+    endX = event.changedTouches[0].clientX;
+    endY = event.changedTouches[0].clientY;
+    if ((endX > (touchX + 100)) & (endY < (touchY + 100)) & (endY > (touchY - 100))){
+        swipeRight();
+    }
+    else if ((endX < (touchX - 100)) & (endY < (touchY + 100)) & (endY > (touchY - 100))){
+        swipeLeft();
+    }
+    else if((endY < (touchY - 100)) & (endX < (touchX + 100)) & (endX > (touchX - 100))){
+        swipeUp();
+    }
+    else if((endY > (touchY + 100)) & (endX < (touchX + 100)) & (endX > (touchX - 100))){
+        swipeDown();
+    }
+}
+
+function startSwipe(event) {
+    touchX = event.changedTouches[0].clientX;
+    touchY = event.changedTouches[0].clientY;
+}
