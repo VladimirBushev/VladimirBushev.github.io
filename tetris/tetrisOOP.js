@@ -65,12 +65,25 @@ function spd() {
 function setScore() {
     ctx.fillStyle = 'white';
     ctx.fillRect(400, 70, 500, 200);
-    ctx.fillStyle = 'blue';
+    ctx.fillStyle = 'lightseagreen';
     ctx.font = '20px Verdana';
-    ctx.fillText('SCORE: ' + score, 10, 20);
-    ctx.fillText('HIGH SCORE', 10, 40);
-    ctx.fillText('THIS SESSION: ' + highScore, 10, 60);
+    ctx.fillText('SCORE: ' + score, 420, 130);
+    ctx.fillText('HIGH SCORE', 420, 160);
+    ctx.fillText('THIS SESSION: ' + highScore, 420, 190); 
     ctx.fillText('NEXT FIGURE', 420, 300);
+
+    ctx.fillText('Control', 420, 500 );
+
+    ctx.fillText('PC:', 420, 540 );
+    ctx.fillText('Use the arrows on', 420, 580 );
+    ctx.fillText('the keyboard', 420, 600 );
+
+    
+    ctx.fillText('MOBILE:', 420, 660 );
+    ctx.fillText('Swipe left, right and' , 420, 700 );
+    ctx.fillText('up to control', 420, 720 );
+    ctx.fillText('Tap the screen to', 420, 780 );
+    ctx.fillText('place the tetromino', 420, 800 );
 }
 function drawNextFigure() {
     ctx.fillStyle = 'white';
@@ -195,7 +208,7 @@ function drawGame() {
     for (var i = 0; i < 24; i++) {
         for (var j = 0; j < 10; j++) {
             if (bg[i][j].z === 0) {
-                ctx.fillStyle = 'yellow';
+                ctx.fillStyle = 'lightseagreen';
             }
             else if (bg[i][j].z === 2) {
                 ctx.fillStyle = 'blue';
