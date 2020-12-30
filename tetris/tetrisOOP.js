@@ -59,9 +59,9 @@ function spd() {
     else if (speedId.value === '10') {
         speed = 100;
     }
-
-
 }
+
+
 function setScore() {
     ctx.fillStyle = 'white';
     ctx.fillRect(400, 70, 500, 200);
@@ -789,16 +789,16 @@ function swipeDown(){
 function end(event) {
     endX = event.changedTouches[0].clientX;
     endY = event.changedTouches[0].clientY;
-    if ((endX > (touchX + 50)) & (endY < (touchY + 50)) & (endY > (touchY - 50))){
+    if ((endX > (touchX + 50)) &&  (endY < (touchY + 50)) && (endY > (touchY - 50))){
         swipeRight();
     }
-    else if ((endX < (touchX - 50)) & (endY < (touchY + 50)) & (endY > (touchY - 50))){
+    else if ((endX < (touchX - 50)) && (endY < (touchY + 50)) && (endY > (touchY - 50))){
         swipeLeft();
     }
-    else if((endY < (touchY - 50)) & (endX < (touchX + 50)) & (endX > (touchX - 50))){
+    else if((endY < (touchY - 50)) && (endX < (touchX + 50)) && (endX > (touchX - 50))){
         swipeUp();
     }
-    else if ((endX === touchX) & (endY === touchY)){
+    else if ((endX === touchX) && (endY === touchY)){
         swipeDown();
     }
 }
