@@ -76,15 +76,11 @@ function drawSnake(s){
 }
 
 function spawnFood(){
-     xFood = (Math.floor(Math.random() * 20)*40) + 100;
-     yFood = (Math.floor(Math.random() * 20)*40) + 100;
-     if ((x=== xFood) && (y ===yFood)){
-        spawnFood();
-    }
-    for (let i = 0; i < (snakeX.length - 1); i++) { 
+    xFood = (Math.floor(Math.random() * 20)*40) + 100;
+    yFood = (Math.floor(Math.random() * 20)*40) + 100;
+    for (let i = 0; i < (snakeX.length); i++) { 
         if ((snakeX[i] === xFood)&&(snakeY[i]=== yFood)) {
         spawnFood();
-        break;
         }
     }
 }
@@ -101,7 +97,6 @@ function drawGame (){
         b = snakeY[0];
         for (let i = 0; i < (snakeX.length - 1); i++) { 
             if ((x === snakeX[i]) && (y === snakeY[i])){
-                //x = x - 40;
                 deadIndicator = true;
                 blockLeft = true;
                 blockDown = true;
@@ -322,11 +317,11 @@ function keyDown(e){
 
 function EatFood(){
     if ((x=== xFood) && (y ===yFood)){
-        spawnFood();
         snakeLenght++;
-        setScore();
         snakeX.push(x);
         snakeY.push(y);
+        spawnFood();
+        setScore();
         chek = false;
     }
 
