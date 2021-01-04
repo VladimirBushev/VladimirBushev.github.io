@@ -6,6 +6,7 @@ let speedId = document.getElementById('label');
 let x=500;
 let y=500;
 let direction = 'right';
+let directionArr = [];
 let speed = 200;
 let xFood = 0;
 let yFood = 0;
@@ -24,11 +25,20 @@ let deadIndicator = false;
 let k = true;
 let sok = false;
 
+
+
 ctx.fillStyle = 'lightseagreen';
 ctx.fillRect(100,100,800,800);
 
 ctx.fillStyle = 'yellow';
 ctx.fillRect(x,y,40,40);
+
+function score() {
+    let locstor = localStorage.length;
+    localStorage.setItem((locstor + 1), snakeLenght)
+    console.log(localStorage);
+}
+
 
 function spd() {
     if (speedId.value === '1') {
@@ -103,7 +113,9 @@ function drawGame (){
                 blockUp = true;
                 blockRight = true;
                 clearInterval(startGame.timer);
+                score();
                 setInterval(die,100);
+                
                 k = false;
                 break;
             }
@@ -135,6 +147,10 @@ function drawGame (){
 
 function move(){ 
     if (deadIndicator === false) {
+        if (directionArr.length != 0) {
+            direction = directionArr[0];
+            directionArr.shift();
+        }
         if ((direction === 'right')) {
             x = x + 40;
             if (x>860) {
@@ -145,7 +161,9 @@ function move(){
                 blockUp = true;
                 blockRight = true;
                 clearInterval(startGame.timer);
+                score();
                 setInterval(die,100);
+                
             }
             else{
             drawGame();
@@ -162,7 +180,9 @@ function move(){
                 blockUp = true;
                 blockRight = true;
                 clearInterval(startGame.timer);
+                score();
                 setInterval(die,100);
+                
             }
             else{
             drawGame();
@@ -179,7 +199,9 @@ function move(){
                 blockUp = true;
                 blockRight = true;
                 clearInterval(startGame.timer);
+                score();
                 setInterval(die,100);
+                
             }
             else{
             drawGame();
@@ -196,7 +218,9 @@ function move(){
                 blockUp = true;
                 blockRight = true;
                 clearInterval(startGame.timer);
+                score();
                 setInterval(die,100);
+                
             }
             else{
             drawGame();
@@ -230,13 +254,32 @@ function keyDown(e){
 
     if (((e.keyCode === 39) || (e === 'right')) && (blockRight === false)) { //право
         x=x+40;
-        if (x <= 860){
+        if (x <= 860){            
+            // direction = 'right';
+            if (directionArr.length === 0) {
+                if (direction != 'right') {
+                    directionArr.push('right');
+                }
+            }
+
+            else {
+                if (directionArr[directionArr.length - 1] != 'right') {
+                    directionArr.push('right');
+                }
+            }
             
-            direction = 'right';
             blockLeft = true;
             blockDown = false;
             blockUp = false;
-            drawGame();
+
+            if (directionArr.length != 0) {
+                x=x-40;
+            }
+            else {
+                    drawGame(); 
+            }
+            // drawGame();
+
         }
         else {
             x=860;
@@ -246,18 +289,39 @@ function keyDown(e){
             blockUp = true;
             blockRight = true;
             clearInterval(startGame.timer);
+            score();
             setInterval(die,100);
+                
         }
     }
     else if (((e.keyCode === 38) || (e === 'up'))  && (blockUp === false)) { //вверх
         y=y-40;
         if (y >= 100) {
         
-        direction = 'up';
-        blockLeft = false;
-        blockDown = true;
-        blockRight = false;
-        drawGame();
+            // direction = 'up';
+            if (directionArr.length === 0) {
+                if (direction != 'up') {
+                    directionArr.push('up');
+                }
+            }
+
+            else {
+                if (directionArr[directionArr.length - 1] != 'up') {
+                    directionArr.push('up');
+                }
+            }
+
+            blockLeft = false;
+            blockDown = true;
+            blockRight = false;
+
+            if (directionArr.length != 0) {
+            y=y+40;
+            }
+            else {
+                    drawGame(); 
+            }
+            // drawGame();
         }
         else {
             y=100;
@@ -267,18 +331,39 @@ function keyDown(e){
             blockUp = true;
             blockRight = true;
             clearInterval(startGame.timer);
+            score();
             setInterval(die,100);
+            
         }
     }
     else if (((e.keyCode === 37) || ( e === 'left')) && (blockLeft === false)) { //влево
         x=x-40;
         if (x >= 100 ){
        
-        direction = 'left';
-        blockRight = true;
-        blockDown = false;
-        blockUp = false;
-        drawGame();
+        // direction = 'left';
+            if (directionArr.length === 0) {
+                if (direction != 'left') {
+                    directionArr.push('left');
+                }
+            }
+
+            else {
+                if (directionArr[directionArr.length - 1] != 'left') {
+                    directionArr.push('left');
+                }
+            }    
+
+            blockRight = true;
+            blockDown = false;
+            blockUp = false;
+
+            if (directionArr.length != 0) {
+                x=x+40;
+            }
+            else {
+                drawGame(); 
+            }
+            // drawGame();
         }
         else{
             x=100;
@@ -288,18 +373,39 @@ function keyDown(e){
             blockUp = true;
             blockRight = true;
             clearInterval(startGame.timer);
+            score();
             setInterval(die,100);
+            
         }
     }
     else if (((e.keyCode === 40) || ( e === 'down')) && (blockDown === false)) { //вниз  }
         y=y+40;
         if (y <= 860){
         
-        direction = 'down';
-        blockLeft = false;
-        blockRight = false;
-        blockUp = true;
-        drawGame();
+        // direction = 'down';
+            if (directionArr.length === 0) {
+                if (direction != 'down') {
+                    directionArr.push('down');
+                }
+            }
+
+            else {
+                if (directionArr[directionArr.length - 1] != 'down') {
+                    directionArr.push('down');
+                }
+            }
+
+            blockLeft = false;
+            blockRight = false;
+            blockUp = true;
+
+            if (directionArr.length != 0){
+                y=y-40;
+            }
+            else {
+                drawGame(); 
+            }
+            // drawGame();
         }
         else {
             y=860;
@@ -309,7 +415,9 @@ function keyDown(e){
             blockUp = true;
             blockRight = true;
             clearInterval(startGame.timer);
+            score();
             setInterval(die,100);
+            
         }
     
     }
@@ -345,6 +453,7 @@ function startGame () {
     direction = 'right';
     snakeX = [];
     snakeY = [];
+    directionArr = [];
     blockLeft = true;
     blockRight = false;
     blockUp = false;
