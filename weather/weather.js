@@ -79,7 +79,7 @@ var element = document.querySelector('.taganskaya');
 element.addEventListener('click', tgn);
 
 function changeCity2() {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=55.739610&lon=37.656117&appid=5a8b65c0e13440f5fe1a809787cf47d1`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=55.739610&lon=37.656117&appid=5a8b65c0e13440f5fe1a809787cf47d1`)
     .then(function(resp) { return resp.json() })
     .then(function(data){
         document.querySelector('.humidity').textContent = data.main.humidity;
@@ -91,7 +91,7 @@ function changeCity2() {
     .catch(function(){
 
     })
-    fetch(`http://api.openweathermap.org/data/2.5/weather?lat=55.739610&lon=37.656117&appid=5a8b65c0e13440f5fe1a809787cf47d1`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=55.739610&lon=37.656117&appid=5a8b65c0e13440f5fe1a809787cf47d1`)
         .then(function(resp) { return resp.json() })
         .then(function(data) {
             console.log(data);
@@ -181,10 +181,9 @@ function changeCity2() {
 
 function changeCity(i) {
     
-    fetch(`http://api.openweathermap.org/data/2.5/weather?id=${i}&appid=5a8b65c0e13440f5fe1a809787cf47d1`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?id=${i}&appid=5a8b65c0e13440f5fe1a809787cf47d1`)
         .then(function(resp) { return resp.json() })
         .then(function(data){
-            console.log(data);
             // document.querySelector('.city-name').textContent = data.name;
             document.querySelector('.humidity').textContent = data.main.humidity;
             document.querySelector('.pressure').textContent = Math.round((data.main.pressure)/1.33);
@@ -197,10 +196,9 @@ function changeCity(i) {
 
         });
 
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${i}&appid=784fec98a81f58833ae33b58af475b6e`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${i}&appid=784fec98a81f58833ae33b58af475b6e`)
         .then(function(resp) { return resp.json() })
         .then(function(data) {
-            console.log(data);
             document.querySelector('.temp3').innerHTML = (Math.round((data.list[1].main.temp - 273.15)*10))/10 + ' &deg;';
             document.querySelector('.image3').innerHTML = `<img src='https://openweathermap.org/img/wn/${data.list[1].weather[0]['icon']}@2x.png'>`;
             let stroka = data.list[1].dt_txt;
