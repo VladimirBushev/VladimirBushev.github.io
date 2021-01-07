@@ -8,6 +8,9 @@ setInterval(time,1000);
 
 let cityId = 498817;
 
+let city = document.querySelector('.city');
+city.innerHTML = 'saint-petersburg';
+
 function spb() {
     cityId = 498817;    
     var element = document.querySelector('.changed-city');
@@ -15,6 +18,7 @@ function spb() {
     var element = document.querySelector('.saint-petersburg');
     element.classList.add('changed-city');
     changeCity(cityId);
+    city.innerHTML = 'saint-petersburg';
 }
 
 function msk() {
@@ -25,6 +29,7 @@ function msk() {
     var element = document.querySelector('.moscow');
     element.classList.add('changed-city');
     changeCity(cityId);
+    city.innerHTML = 'moscow'
 }
 
 function skt() {
@@ -34,6 +39,7 @@ function skt() {
     var element = document.querySelector('.syktyvkar');
     element.classList.add('changed-city');
     changeCity(cityId);
+    city.innerHTML = 'syktyvkar'
 }
 
 function srk() {
@@ -43,6 +49,7 @@ function srk() {
     var element = document.querySelector('.saransk');
     element.classList.add('changed-city');
     changeCity(cityId);
+    city.innerHTML = 'saransk'
 }
 
 function tgn() {   
@@ -51,6 +58,7 @@ function tgn() {
     var element = document.querySelector('.taganskaya');
     element.classList.add('changed-city');
     changeCity2();
+    city.innerHTML = 'taganskaya'
 }
 
 function tet(){
@@ -309,4 +317,9 @@ function burgerMenu() {
 let burger = document.querySelector('.header__burger')
 burger.addEventListener('click', burgerMenu)
 
+let myImage = document.querySelector('.header__image img')
+myImage.addEventListener('click', vkontakte )
 
+function vkontakte() {
+    document.location.href = "https://vk.com/id119670907";
+}
