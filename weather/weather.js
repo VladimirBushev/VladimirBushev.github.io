@@ -18,6 +18,7 @@ function spb() {
 }
 
 function msk() {
+    console.log('msk');
     cityId = 524894;    
     var element = document.querySelector('.changed-city');
     element.classList.remove('changed-city');
@@ -94,7 +95,6 @@ function changeCity2() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=55.739610&lon=37.656117&appid=5a8b65c0e13440f5fe1a809787cf47d1`)
         .then(function(resp) { return resp.json() })
         .then(function(data) {
-            console.log(data);
             document.querySelector('.temp3').innerHTML = (Math.round((data.list[1].main.temp - 273.15)*10))/10 + ' &deg;';
             document.querySelector('.image3').innerHTML = `<img src='https://openweathermap.org/img/wn/${data.list[1].weather[0]['icon']}@2x.png'>`;
             let stroka = data.list[1].dt_txt;
@@ -284,5 +284,29 @@ function changeCity(i) {
 }
 
 changeCity(cityId);
+
+let burg = false;
+let menu = document.querySelector('.header__menu')
+let body = document.querySelector('body')
+
+function burgerMenu() {
+    if (burg === false) {
+        burger.classList.add('activated');
+        menu.classList.add('activated');
+        body.classList.add('activated');
+        burg = true;
+    }
+    else {
+        burger.classList.remove('activated');
+        menu.classList.remove('activated');
+        body.classList.remove('activated');
+        burg = false;
+    }
+}
+
+
+
+let burger = document.querySelector('.header__burger')
+burger.addEventListener('click', burgerMenu)
 
 

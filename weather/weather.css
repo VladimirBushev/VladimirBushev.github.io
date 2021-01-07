@@ -1,3 +1,58 @@
+/*Обнуление*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+/* html,body{height: 100%;margin: 0;padding: 0;min-width: $minwidth;position: relative;width: 100%; color: #000;}
+body{font-size: 100%;line-height: 1;font-size: 14px;font-family: $fontfamily; -ms-text-size-adjust: 100%;-moz-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;
+    &.lock{overflow: hidden;
+        @media (max-width:$md3+px){
+            width: 100%;
+            position: fixed;
+            overflow: hidden;
+        }
+    }
+} */
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.header__burger {
+    display: none;
+}
+
+.header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:  lightseagreen;
+    z-index: 2;
+}
+
+.footer {
+    margin-top: 130px;
+}
+
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -6,11 +61,6 @@ body {
     max-width: 1800px;
     padding: 0px 15px;
     margin: 0px auto;
-}
-
-.button:hover {
-    background-color: white;
-    color: lightseagreen;
 }
 
 .button {
@@ -43,6 +93,7 @@ body {
 .left-today {
     width: 60%;
     margin-left: 20px;
+    padding: 20px;
 }
 
 .right-today {
@@ -58,12 +109,6 @@ body {
 
 }
 
-
-.changed-city {
-    background-color: white;
-    color: lightseagreen;
-    cursor: default;
-}
 
 .temp-today, .image-today {
     font-size: 75px;
@@ -83,18 +128,32 @@ body {
     font-size: 50px;
 }
 
-.city-changer {
+.header__list {
     display: flex;
-    margin: 20px auto;
+    position: relative;
+    z-index: 2;
 }
 
-.city-changer div {
-    width: 25%;
-    text-align: center;
+.header__link {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    margin: auto 10px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.city-changer {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center ;
 }
 
 .left-today p {
     font-size: 30px;
+    margin-bottom: 30px;
 }
 
 .image1 {
@@ -110,6 +169,20 @@ body {
 
 .games {
     margin-top: 1% ;
+}
+
+.header__image {
+    margin-left: 30px;
+    width: 80px;
+    height: 80%;
+    z-index: 3;
+
+}
+
+.header__image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .zmeika, .tetris {
@@ -128,6 +201,50 @@ body {
     background-color: white;
     color: lightseagreen;
     cursor: pointer;
+    transition: all 0.5s ease 0s;
+}
+
+body.activated {
+    overflow: hidden;
+}
+
+.block__text {
+    padding: 20px 10px 10px 10px;
+    font-size: 30px;
+}
+
+.changed-city {
+    background-color: white;
+    color: lightseagreen;
+    cursor: default;
+    border-radius: 15px;
+}
+
+.header__burger.activated:before {
+    transform: rotate(45deg);
+    top: 15px;
+}
+
+.header__burger.activated:after {
+    transform: rotate(-45deg);
+    bottom: 15px;
+}
+
+.header__burger.activated span {
+    transform: scale(0);
+}
+
+.header__menu.activated {
+    top:0;
+    transition: all 0.4s ease 0s;
+    overflow: auto;
+}
+
+.header__link:hover{
+    background-color: white;
+    color: lightseagreen;
+    border-radius: 15px;
+    transition: all 0.5s ease 0s;
 }
 
 @media (max-width:1600px){
@@ -141,6 +258,9 @@ body {
 @media (max-width:1470px){
     .left-today p{
         font-size: 20px;
+    }
+    .header__link {
+        font-size: 25px;
     }
 }
 @media (max-width:1222px){
@@ -158,6 +278,9 @@ body {
     }
     .today .right-today .temp-today {
         font-size: 35px;
+    }
+    .header__link {
+        font-size: 20px;
     }
 
 }
@@ -189,6 +312,9 @@ body {
     .forecast1, .forecast2 p {
         font-size: 30px;
     }
+    .header__link {
+        font-size: 16px;
+    }
 }
 
 
@@ -199,6 +325,9 @@ body {
     .zmeika, .tetris{
         font-size: 50px;
         margin: 10px 10px;
+    }
+    .header__link {
+        font-size: 14px;
     }
 }
 
@@ -213,6 +342,66 @@ body {
     .forecast1, .forecast2, .today{
         width: 97%;
     }
+    .header__burger {
+        display: block;
+        position: relative;
+        width: 50px;
+        height: 35px;
+        position: relative;
+        z-index: 3;
+        margin-right: 30px;
+    }   
+    .header__burger:before, .header__burger:after {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        border-radius: 2px;
+        left: 0;
+        transition: all 0.4s ease 0s;
+    }
+    .header__burger:before {
+        top: 0;
+    }
+    .header__burger:after {
+        bottom: 0;
+    }
+    .header__burger span {
+        position: absolute;
+        background-color: #fff;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        top: 15px;
+        border-radius: 2px;
+        transition: all 0.4s ease 0s;
+    }
+    .header__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: lightseagreen;
+        color: white;
+        padding: 130px 0px 0px 0px;
+    }
+
+
+    .header__list {
+        display: block;
+    }
+    .header__link {
+        font-size: 30px;
+    }
+
+    .header__list li {
+        margin: 15px;
+    }
+    .block__text {
+        font-size: 20px;
+    }
 }
 
 
@@ -226,13 +415,6 @@ body {
 }
 
 @media (max-width: 500px){
-    .city-changer {
-        display: inline;
-    }
-    .city-changer div {
-        margin: 10px 10px;
-        width: 96%;
-    }
     .forecast1, .forecast2, .today{
         width: 96%;
     }
@@ -245,6 +427,16 @@ body {
 @media (max-width: 400px){
     .zmeika, .tetris{
         font-size: 44px;
+    }
+    .header__link {
+        font-size: 25px;
+    }
+    .forecast1 img, .forecast2 img {
+        width: 80px;
+        height: 80px;
+    }
+    .forecast1 p, .forecast2 p{
+        font-size: 25px;
     }
 
 }
