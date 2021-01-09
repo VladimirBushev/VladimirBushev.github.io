@@ -75,6 +75,13 @@ tetris.addEventListener('click', tet) ;
 let zmeika = document.querySelector('.zmeika');
 zmeika.addEventListener('click', snk) ;
 
+function project1(){
+    document.location.href = 'preprostest/index.html';
+}
+
+let prj1 = document.querySelector('.projects__project1');
+prj1.addEventListener('click', project1) ;
+
 
 var element = document.querySelector('.saint-petersburg');
 element.addEventListener('click', spb);

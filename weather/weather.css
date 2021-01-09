@@ -203,6 +203,26 @@ body {
     box-shadow: 0 10px 15px rgb(53, 53, 53);
 }
 
+.projects__project1{
+    margin-top: 30px;
+    max-width: 200px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    background-color:lightseagreen ;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgb(53, 53, 53);
+}
+
+.projects__project1:hover{
+    background-color: white;
+    color: lightseagreen;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;
+}
+
 .zmeika:hover, .tetris:hover {
     background-color: white;
     color: lightseagreen;
