@@ -1,8 +1,12 @@
 const cvs = document.getElementById('canvas')
 const ctx = cvs.getContext('2d')
 document.addEventListener("keydown", keyDown);
-let speedId = document.getElementById('label');
+document.querySelector('html').addEventListener('touchstart',startSwipe);
+document.querySelector('html').addEventListener('touchend',end);
+let startButton = document.querySelector('.start-button');
+startButton.addEventListener('click', startGame);
 
+let speedId = document.getElementById('label');
 let x=500;
 let y=500;
 let direction = 'right';
@@ -24,21 +28,25 @@ let b = 0;
 let deadIndicator = false;
 let k = true;
 let sok = false;
-
-
+let touchX = 0;
+let touchY = 0;
+let endX = 0;
+let endY = 0;
 
 ctx.fillStyle = 'lightseagreen';
 ctx.fillRect(100,100,800,800);
-
 ctx.fillStyle = 'yellow';
 ctx.fillRect(x,y,40,40);
+
+spawnFood();
+drawGame();
+setScore();
 
 function score() {
     let locstor = localStorage.length;
     localStorage.setItem((locstor + 1), snakeLenght)
     console.log(localStorage);
 }
-
 
 function spd() {
     if (speedId.value === '1') {
@@ -94,7 +102,6 @@ function spawnFood(){
         }
     }
 }
-
 
 function drawGame (){
     ctx.fillStyle = 'lightseagreen';
@@ -250,6 +257,7 @@ function die(){
         }
     } 
 }
+
 function keyDown(e){
 
     if (((e.keyCode === 39) || (e === 'right')) && (blockRight === false)) { //право
@@ -435,12 +443,6 @@ function EatFood(){
 
 }
 
-spawnFood();
-drawGame();
-
-let startButton = document.querySelector('.start-button');
-startButton.addEventListener('click', startGame);
-
 function startGame () {
     if (sok === true) {
         clearInterval(timer);
@@ -465,14 +467,6 @@ function startGame () {
     startButton.innerHTML = 'RESTART';
     sok = true;
 }
-
-let touchX = 0;
-let touchY = 0;
-let endX = 0;
-let endY = 0;
-
-document.querySelector('html').addEventListener('touchstart',startSwipe);
-document.querySelector('html').addEventListener('touchend',end);
 
 function swipeRight(){
     keyDown('right');
@@ -501,7 +495,6 @@ function setScore() {
     ctx.fillText('Swipe if you play on phone', 100, 980);
 
 }
-setScore();
 
 function end(event) {
     endX = event.changedTouches[0].clientX;
@@ -526,3 +519,5 @@ function startSwipe(event) {
     touchY = event.changedTouches[0].clientY;
     
 }
+
+
