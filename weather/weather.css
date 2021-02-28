@@ -30,7 +30,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     font-size: 40px;
     text-align: center;
     padding-top: 20px;
-    color: lightseagreen;d
+    color: lightseagreen;
 }
 
 .header {
@@ -212,7 +212,8 @@ body {
     box-shadow: 0 10px 15px rgb(53, 53, 53);
 }
 
-.projects__project1{
+.projects__project1, .projects__project2{
+    display: inline-block;
     margin-top: 30px;
     max-width: 200px;
     font-size: 30px;
@@ -226,7 +227,7 @@ body {
     box-shadow: 0 5px 10px rgb(53, 53, 53);
 }
 
-.projects__project1:hover{
+.projects__project1:hover, .projects__project2:hover{
     background-color: white;
     color: lightseagreen;
     cursor: pointer;

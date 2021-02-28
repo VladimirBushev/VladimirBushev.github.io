@@ -82,6 +82,13 @@ function project1(){
 let prj1 = document.querySelector('.projects__project1');
 prj1.addEventListener('click', project1) ;
 
+function project2(){
+    document.location.href = 'http://vladimirbushev.gq';
+}
+
+let prj2 = document.querySelector('.projects__project2');
+prj2.addEventListener('click', project2) ;
+
 
 var element = document.querySelector('.saint-petersburg');
 element.addEventListener('click', spb);
