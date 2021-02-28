@@ -1,0 +1,29 @@
+.img {
+    display: inline;
+    height: 100%;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.name {
+    font-size: 40px;
+    display: inline;
+    height: 100%;
+    width: 100%;
+    vertical-align: top;
+    margin: 40px;
+}
+
+.div {
+    background-color: white;
+    box-shadow: 2px 4px rgb(200, 200, 200);
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+    border-radius: 7px;
+    height: 200px;
+}
+
+.div:hover {
+    cursor: pointer;
+}
