@@ -1,0 +1,21 @@
+.parent {
+    background-color: black;
+    width: 100px;
+    height: 100px;
+}
+
+.child {
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    vertical-align: bottom;
+    display: inline-block;
+    margin-bottom: ;
+}
+
+.chil {
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+    background-color: royalblue;
+}
