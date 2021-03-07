@@ -6,6 +6,7 @@
 // console.log(user);  
 //--------------------------------------------------
 
+
 // function isEmpty(obj){
 //     for (let key in obj){
 //         return false;
@@ -47,7 +48,7 @@
 //     height: 300,
 //     title: "My menu"
 // };
-  
+
 // multiplyNumeric(menu);
 
 // function multiplyNumeric(obj) {
@@ -262,9 +263,9 @@
 //------------------------------------------------------------
 
 // function uniquePoints(arr){
-    // let newArr = [];
-    // arr.forEach((elem, i) => i === 0 || !(newArr.find(el => el.x === elem.x && el.y === elem.y)) ? newArr.push(elem) : true)
-    // return newArr
+// let newArr = [];
+// arr.forEach((elem, i) => i === 0 || !(newArr.find(el => el.x === elem.x && el.y === elem.y)) ? newArr.push(elem) : true)
+// return newArr
 //     return arr.reduce((accum, elem, i) => i === 0 || !(accum.find(el => el.x === elem.x && el.y === elem.y)) ? accum.push(elem) : true, [])
 // }
 
@@ -434,7 +435,7 @@
 
 
 // function Calculator() {
-    
+
 //     this.methods = {
 //         "+": (a, b) => a + b,
 //         "-": (a, b) => a - b,
@@ -446,13 +447,13 @@
 //         a = +split[0],
 //         op = split[1],
 //         b = +split[2]
-        
+
 //         if ( !this.methods[op] || isNaN(a) || isNaN(b)) {
 //             return NaN;
 //         }
 //         return this.methods[op](a, b);
 //     }
-    
+
 //     this.addMethod = function(name, func) {
 //         this.methods[name] = func
 //     }
@@ -531,7 +532,7 @@
 //                     } else {
 //                         break
 //                     }
-                    
+
 //                 }         
 //             }
 //         });
@@ -541,12 +542,12 @@
 
 // function aclean(arr) {
 //     let map = new Map();
-    
+
 //     for (let i = arr.length-1; i > -1; i--) {
 //       let sorted = arr[i].toLowerCase().split("").sort().join("");
 //       map.set(sorted, arr[i]);
 //     }
-  
+
 //     return Array.from(map.values());
 // }
 
@@ -667,7 +668,7 @@
 
 
 // function printList(list) {
-    
+
 //     if (list.next)  {
 //         printList(list.next) 
 //     }
@@ -728,22 +729,22 @@
 //     counter.set = x => count = x
 
 //     counter.decrease = () => count--
-    
+
 //     return counter
 //     // ... ваш код ...
 //   }
 
 //   let counter = makeCounter();
-  
+
 //   alert( counter() ); // 0
 //   alert( counter() ); // 1
-  
+
 //   counter.set(10); // установить новое значение счётчика
-  
+
 //   alert( counter() ); // 10
-  
+
 //   counter.decrease(); // уменьшить значение счётчика на 1
-  
+
 //   alert( counter() ); // 10 (вместо 11)
 
 //-------------------------------------------------------------------------
@@ -757,7 +758,7 @@
 //     f.toString = function() {
 //         return acc;
 //     };
-    
+
 //     return f
 // }
 
@@ -1082,11 +1083,11 @@
 //     }
 
 // }
-  
+
 //   var user = new User();
 //   user.setFirstName("Петя");
 //   user.setSurname("Иванов");
-  
+
 //   alert( user.getFullName() ); // Петя Иванов
 
 //-------------------------------------------------------------------------------
@@ -1217,18 +1218,72 @@
 // end = new Date().getTime();
 // console.log(`время JS сортировки ${end - start} ms`)
 
+// let a = {
+//     b: {
+//         c: {
+//             d: [1, 2, 3, 4, 5]
+//         },
+//         e: [6, 7, 8, 9, 10]
+//     }
+// }
+
+
+// let f = {...a}
+// f.b.j = 11
+// console.log(a)
+// f.g = 10
+// console.log(f)
+
+// const flarArr = (arr) => {
+//     let array = []
+//     for (let i = 0; i < arr.length; i++) {
+//         if (typeof arr[i] === 'number') {
+//             array = [...array, arr[i]] 
+//         } else {
+
+//             array = [...array, ...flarArr(arr[i])] 
+//         } 
+//     } 
+//     return array
+// }
+
+// console.log(flarArr([1, [1, 2, [3, 4]], [2, 4]]))
+
+// setTimeout(() => console.log('4'), 0)
+// Promise.resolve().then(() => console.log('2'))
+// Promise.resolve().then(() => setTimeout(() => console.log('6'), 0))
+// Promise.resolve().then(() => console.log('3'))
+// setTimeout(() => console.log('5'), 0)
+// console.log('1')
+
+
+// Promise.resolve(123)
+// .then(x => x + 1)
+// .catch(x => x + 2)
+// .then(x => x + 3)
+
+
+
+// function sum(n) {
+//     console.log(n)
+//     return function func(m) {
+//         console.log(n += m)
+//         return func 
+//     }
+// }
+
+// //sum(1)
+
+// sum(1)(2)(3)
+
 let a = {
-    b: {
-        c: {
-            d: [1, 2, 3, 4, 5]
-        },
-        e: [6, 7, 8, 9, 10]
-    }
+    arr: [1, 2, 3],
+    name: {
+        firstName: 'vladimir',
+        lastname: 'bushev'
+    },    
 }
 
+let b = JSON.parse(JSON.stringify(a))
 
-let f = {...a}
-f.b.j = 11
-console.log(a)
-f.g = 10
-console.log(f)
+console.log(a, b, a === b)
