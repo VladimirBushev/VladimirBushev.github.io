@@ -1276,14 +1276,21 @@
 
 // sum(1)(2)(3)
 
-let a = {
-    arr: [1, 2, 3],
-    name: {
-        firstName: 'vladimir',
-        lastname: 'bushev'
-    },    
-}
+// let a = {
+//     arr: [1, 2, 3],
+//     name: {
+//         firstName: 'vladimir',
+//         lastname: 'bushev'
+//     },    
+// }
 
-let b = JSON.parse(JSON.stringify(a))
+// let b = JSON.parse(JSON.stringify(a))
 
-console.log(a, b, a === b)
+// console.log(a, b, a === b)
+
+// debugger
+// for (let i = 0; i < 10; i++) {
+//     setTimeout(() => {
+//         console.log(i)
+//     }, 0)
+// }

@@ -89,6 +89,13 @@ function project2(){
 let prj2 = document.querySelector('.projects__project2');
 prj2.addEventListener('click', project2) ;
 
+function project3(){
+    document.location.href = 'http://vladimir.gq/Thunk-Saga-Posts';
+}
+
+let prj3 = document.querySelector('.projects__project3');
+prj3.addEventListener('click', project3) ;
+
 
 var element = document.querySelector('.saint-petersburg');
 element.addEventListener('click', spb);
