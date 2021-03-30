@@ -1294,3 +1294,12 @@
 //         console.log(i)
 //     }, 0)
 // }
+
+
+let i = 0
+function func(i) {
+    i++
+}
+
+func(i)
+console.log(i)
