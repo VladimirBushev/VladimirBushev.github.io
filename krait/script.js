@@ -181,7 +181,7 @@ window.addEventListener('scroll', () => {
     header.style.position = 'fixed'
     headerContainer.style.marginTop='0px'
     } else {
-        headerContainer.style.marginTop='61px'
+        if (width > 776) headerContainer.style.marginTop='61px'
         header.style.position = 'static'
     }
     console.log( window.pageYOffset )
