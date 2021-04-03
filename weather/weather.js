@@ -82,6 +82,14 @@ function project1(){
 let prj1 = document.querySelector('.projects__project1');
 prj1.addEventListener('click', project1) ;
 
+function project4(){
+    document.location.href = 'krait/index.html';
+}
+
+let prj4 = document.querySelector('.projects__project4');
+prj4.addEventListener('click', project4) ;
+
+
 function project2(){
     document.location.href = 'http://vladimirbushev.gq';
 }

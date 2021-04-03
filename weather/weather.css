@@ -220,7 +220,7 @@ body {
     box-shadow: 0 10px 15px rgb(53, 53, 53);
 }
 
-.projects__project1, .projects__project2, .projects__project3{
+.projects__project1, .projects__project2, .projects__project3, .projects__project4{
     display: inline-block;
     margin-top: 30px;
     max-width: 200px;
@@ -235,7 +235,7 @@ body {
     box-shadow: 0 5px 10px rgb(53, 53, 53);
 }
 
-.projects__project1:hover, .projects__project2:hover, .projects__project3:hover{
+.projects__project1:hover, .projects__project2:hover, .projects__project3:hover, .projects__project4:hover{
     background-color: white;
     color: lightseagreen;
     cursor: pointer;
